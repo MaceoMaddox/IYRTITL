@@ -41,30 +41,22 @@ const questions = [
         message: "Select your license",
         choices: ["MIT", "Apache", "ISC", "None"]
     }
-    ;
-};
+];
 
 // TODO: Create a function to write README file
-// async function writeToFile(fileName, data) {
-//     fs.writeFile(fileName, data, err => {
-//         if (err) {
-//             return console.log(err)
-//         } else return console.log("ReadMe created");
-//     });
-// };
+function writeToFile(fileName, data) {
+    const generateReadMe = generateMarkdown(data);
+    fs.appendFile(fileName, generateReadMe, (err) => {
+        if (err !== true) {
+            console.log("file written");
+        } else {
+            console.log(err);
+        }
+    })
+};
 
 // TODO: Create a function to initialize app
-
-async function init() {
-    try {
-        const responses = await promptUser();
-        const generateResponses = createReadMe(responses);
-        await writeFileAsync("./gen/newREADME.md", generateResponses);
-        console.log("README.md created");
-    }   catch(err) {
-        console.log(err)
-    }
-};
+function init() {
 
 // Function call to initialize app
 init();
