@@ -23,13 +23,18 @@ const questions = [
     {
         type: "input",
         name: "instructions",
-        message: "What are the test instructions?"
+        message: "What are the installation instructions?"
     },
-    // {
-    //     type: "input",
-    //     name: "contribution",
-    //     message: 
-    // }
+    {
+        type: "input",
+        name: "contribution",
+        message: "What are the contribution guidelines for the project?"
+    },
+    {
+        type: "input",
+        name: "test",
+        message: "What are the test instructions for the project?"
+    },
     {
         type: "input",
         name: "username",
@@ -68,7 +73,7 @@ function init() {
             writeToFile("newREADME.md", answers);
         })
         .catch((error) => {
-            console.log(err)
+            console.log(error)
         });
 };
 
