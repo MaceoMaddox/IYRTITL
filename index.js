@@ -25,6 +25,11 @@ const questions = [
         name: "instructions",
         message: "What are the test instructions?"
     },
+    // {
+    //     type: "input",
+    //     name: "contribution",
+    //     message: 
+    // }
     {
         type: "input",
         name: "username",
@@ -37,7 +42,7 @@ const questions = [
     },
     {
         type: "list",
-        name: "licenses",
+        name: "license",
         message: "Select your license",
         choices: ["MIT", "Apache", "ISC", "None"]
     }
